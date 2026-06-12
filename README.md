@@ -32,12 +32,12 @@ docs/               # 产品设计文档、工作日志、功能清单
 
 `examples/` 目录包含一次完整执行的产出——天水市住房公积金政策文档处理：
 
-- **21 个源文件** → **338 个知识块**
+- **31 个源文件** → **338 个知识块**
 - **669 个实体**（621 个有关系，92.8%）
 - **125 个 Wiki 页面**
 - **496 个 QA 问答对**
 
-详见 [docs/examples/pipeline-output/](docs/examples/pipeline-output/)
+详见 [docs/examples/README.md](docs/examples/README.md)
 
 ## React 交互原型
 
