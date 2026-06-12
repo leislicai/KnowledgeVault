@@ -35,15 +35,21 @@ lerna-debug.log*
 *.7z
 
 # Non-code project dirs
-docs/
 gov-agent/
 gov-agent.zip
 公积金 skill/
 未命名.md
 
-# Claude project config
+# Claude project config (but track example pipeline output)
 .claude/
+!.claude/skills/architecting-knowledge-forms/examples/
 .superpowers/
+
+# Doc subdirs (manually listed so docs/examples/ is tracked)
+docs/specs/
+docs/features/
+docs/superpowers/
+docs/work-log.md
 
 # CLAUDE.md is design-doc specific, not code
 CLAUDE.md

@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# KnowledgeVault
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+政务服务政策文件知识库——将非结构化政策文档处理为结构化 RAG 知识数据集的产品设计仓库。
 
-Currently, two official plugins are available:
+## 仓库结构
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+docs/               # 产品设计文档、工作日志、功能清单
+  specs/            # 设计文档
+  features/         # 功能清单
+  superpowers/      # 技能配置
+  work-log.md       # 每日工作日志
+.claude/
+  skills/           # Claude Code 技能
+    architecting-knowledge-forms/   # 知识管道编排技能
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 技能：architecting-knowledge-forms
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+多形态知识管道设计技能。将政策文档通过四阶段管线处理为知识库：
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Stage | 输入 | 产出 |
+|-------|------|------|
+| 1 — Block Extraction | 政策源文件（HTML/DOCX/PDF） | 原子化知识块（JSON） |
+| 2 — Entity Extraction | 知识块 + 领域配置 | 实体目录 + 关系图 |
+| 3 — Wiki Compilation | 实体目录 | 实体 Wiki 页面（Markdown） |
+| 4 — QA Generation | Wiki 页面 | QA 问答对（JSON） |
+
+核心原则：**每个数据点必须可溯源到政策原文条款**（source_articles）。
+
+### 真实管线示例
+
+`examples/` 目录包含一次完整执行的产出——天水市住房公积金政策文档处理：
+
+- **21 个源文件** → **338 个知识块**
+- **669 个实体**（621 个有关系，92.8%）
+- **125 个 Wiki 页面**
+- **496 个 QA 问答对**
+
+详见 [docs/examples/pipeline-output/](docs/examples/pipeline-output/)
+
+## React 交互原型
+
+交互原型在独立仓库：
+`/Users/cairuilin/Documents/KnowledgeVault-react-antd/`
+
+技术栈：React 19 + TypeScript 6 + Vite 8 + Ant Design v6.4
