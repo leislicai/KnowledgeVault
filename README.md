@@ -21,10 +21,10 @@
 
 | 阶段 | 产出 | 质量 |
 |------|------|------|
-| Stage 1 | **29 个知识块** | 全量机械检查 passed |
-| Stage 2 | **13 个实体 + 38 条关系** | 100% 有联系，0 英文命名违规 |
-| Stage 3 | **13 个 Wiki 页面** | 全量机械检查 passed |
-| Stage 4 | **95 个 QA 对** | 全量机械检查 passed |
+| Stage 1 | **43 个知识块** | 全量机械检查 passed |
+| Stage 2 | **14 个实体 + 25 条关系** | 100% 有联系，0 英文命名违规 |
+| Stage 3 | **14 个 Wiki 页面** | 全量机械检查 passed |
+| Stage 4 | **28 个 QA 对（12 场景，0 常识问题）** | 全量机械检查 passed |
 
 详见 [examples/pipeline-output/](examples/pipeline-output/) 和 [GETTING_STARTED.md](GETTING_STARTED.md)。
 
