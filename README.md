@@ -17,14 +17,14 @@
 
 ### 管线示例
 
-`examples/` 目录包含最近一次完整执行产出——天水市住房公积金 23 份政策文档：
+`examples/pipeline-output/` 包含 v2.7 格式验证管线产出——天水市住房公积金 3 份核心文档：
 
 | 阶段 | 产出 | 质量 |
 |------|------|------|
-| Stage 1 | **250 个知识块** | 置信度 0.949 |
-| Stage 2 | **65 个实体 + 97 条关系** | 87.7% 有联系，0 英文命名违规 |
-| Stage 3 | **24 个 Wiki 页面** | 含 source_block_ids 追溯 |
-| Stage 4 | **114 个 QA 对** | 91 条 ≥0.9 置信度 |
+| Stage 1 | **29 个知识块** | 全量机械检查 passed |
+| Stage 2 | **13 个实体 + 38 条关系** | 100% 有联系，0 英文命名违规 |
+| Stage 3 | **13 个 Wiki 页面** | 全量机械检查 passed |
+| Stage 4 | **95 个 QA 对** | 全量机械检查 passed |
 
 详见 [examples/pipeline-output/](examples/pipeline-output/) 和 [GETTING_STARTED.md](GETTING_STARTED.md)。
 
